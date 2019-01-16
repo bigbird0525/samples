@@ -1,2 +1,2 @@
-from .acsController import AcsController
-name = "acs"
+from .SampleController import SampleController
+name = "sampleController"

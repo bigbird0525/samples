@@ -3,8 +3,8 @@ from unittest.mock import patch
 import sample_mock
 import SampleController as sample
 
-class AcsControllerTestCase(unittest.TestCase): 
-    print('Starting ACS Controller Tests - ')
+class SampleControllerTestCase(unittest.TestCase): 
+    print('Starting Sample Controller Tests - ')
     def setUp(self):
         self.sample = sample.SampleController(local_test=True)
 
