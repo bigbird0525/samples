@@ -1,0 +1,57 @@
+stages:
+  - build
+  - test
+  - deploy
+
+setupEnv:
+  stage: build
+  script: 
+    - echo "Setting up environment"
+    - sudo sh -c "pm2 stop all; exit 0"
+    - sudo sh -c "pm2 delete all; exit 0"
+    - echo 'Running setup.sh script'
+    - curl -sL https://rpm.nodesource.com/setup_8.x | sudo bash -
+    - echo 'Attempting to erase node'
+    - sudo yum erase -y nodejs npm
+    - echo 'Deleting node modules'
+    - sudo rm -rf /usr/lib/node_modules
+    - echo 'Reinstalling node'
+    - sudo yum -y install nodejs
+    - echo 'Node installed'
+    - sudo npm install -g pm2
+    - sudo bash setup.sh
+  only:
+    refs: 
+      - /^sprint.*$/
+
+runTest:
+  stage: test
+  script: 
+    - echo "Setting up test SocketIO server"
+    - cd acsLogs
+    - npm install
+    - pm2 start ioServer.js --name test-io-server
+    - echo "Running tests"
+    - cd ..
+    - bash test.sh
+    - echo "Cleaning up tests"
+    - pm2 stop test-io-server
+    - pm2 delete test-io-server
+  only:
+    refs: 
+      - /^sprint.*$/
+
+deploy:
+  stage: deploy
+  environment:
+    name: development
+    url: {Insert server IP or hostname}
+  script:
+    - echo "Deploying to Jump Server"
+    - sudo bash setup.sh
+    - cd acsLogs
+    - npm install
+
+  only:
+    refs: 
+      - /^sprint.*$/
