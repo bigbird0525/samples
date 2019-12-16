@@ -1,0 +1,12 @@
+{
+    "release": "1111",
+    "date": "11-25-2019",
+    "description": "Logging into VIA",
+    "steps": [
+      {
+          "action": "login",
+          "server": "98.8.159.170",
+          "user": "viaops_admin"
+      }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "release": "1111",
+    "date": "12-16-2019",
+    "description": "Logging out of VIA",
+    "steps": [
+      {
+          "action": "log_out"
+      }
+    ]
+}

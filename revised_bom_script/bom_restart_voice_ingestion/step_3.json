@@ -1,0 +1,22 @@
+{
+    "release": "1111",
+    "date": "12-16-2019",
+    "description": "Stopping models",
+    "steps": [
+      {
+          "action": "start_model",
+          "name": "/app/spark/space/Voice%20Ingestion/sparkm/RT%20Voice%20Parse%20IMS",
+          "file_name": "../export_profiles/ncw_prod_profiles/Voice_Ingestion/RT_Voice_Parse_IMS.json"
+      },
+      {
+          "action": "start_model",
+          "name": "/app/spark/space/Voice%20Ingestion/sparkm/RT%20Voice%20Parse%20IMS%20Voicemail",
+          "file_name": "../export_profiles/ncw_prod_profiles/Voice_Ingestion/RT_Voice_Parse_IMS_Voicemail.json"
+      },
+      {
+          "action": "start_model",
+          "name": "/app/spark/space/Voice%20Ingestion/sparkm/RT%20Voice%20Parse%20MetaSwitch",
+          "file_name": "../export_profiles/ncw_prod_profiles/Voice_Ingestion/RT_Voice_Parse_MetaSwitch.json"
+      }
+    ]
+}

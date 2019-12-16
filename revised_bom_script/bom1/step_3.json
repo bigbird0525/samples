@@ -1,0 +1,10 @@
+{
+    "release": "1111",
+    "date": "11-25-2019",
+    "description": "delete all models from CharterDigital Operations and import as charter_admin",
+    "steps": [
+      {
+          "action": "log_out"
+      }
+    ]
+}

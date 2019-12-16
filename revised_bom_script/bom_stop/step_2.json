@@ -1,0 +1,11 @@
+{
+    "release": "1111",
+    "date": "11-25-2019",
+    "description": "Testing stopping model",
+    "steps": [
+      {
+          "action": "stop_model",
+          "name": "/app/spark/space/VIAOps DO Monitoring/sparkm/RT Parse Query Performance Monitoring v1"
+      }
+    ]
+}
