@@ -1,4 +1,4 @@
 VIA:
-  server: 98.8.159.170
-  user: vtbaadmin
-  pass: vitria
+  server: {HOSTNAME/IP ADDRESS}
+  user: {USER}
+  pass: {PASS}
